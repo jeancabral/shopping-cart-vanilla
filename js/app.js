@@ -1,6 +1,6 @@
 const produtos = document.querySelector('#lista-de-produto')
 
-cart = document.querySelector('#sacola tbody')
+const cart = document.querySelector('#sacola tbody')
 
 
 loadEventListeners();
@@ -47,3 +47,10 @@ function addToCart(item) {
 
     cart.appendChild(row);
 }
+
+//esvaziar sacola
+document.querySelector("a#esvaziar-sacola").addEventListener("click", ()=>{
+    let rows = document.querySelectorAll("table#sacola tbody")[0].childNodes
+    while(rows)
+         document.querySelectorAll("table#sacola tbody")[0].removeChild(rows[0])  
+})
